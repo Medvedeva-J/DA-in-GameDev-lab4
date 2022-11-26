@@ -90,6 +90,31 @@ double DotProductBias(double[] v1, double[] v2)
 ```
 
 ## Задание 3 Построить визуальную модель работы перцептрона на сцене Unity
+Скрипт для изменения цвета объекта:
+
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ChangeColor : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Renderer>().material.color == Color.white && this.gameObject.GetComponent<Renderer>().material.color == Color.white)
+        {
+            other.gameObject.GetComponent<Renderer>().material.color = Color.white;
+            this.gameObject.GetComponent<Renderer>().material.color = Color.white;
+        }
+        else
+        {
+            other.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            this.gameObject.GetComponent<Renderer>().material.color = Color.black;
+        }
+    }
+}
+
+```
 Черные кубы - 1, белые - 0.
 При падении кубы меняют цвет в соответствии с результатом (тестируем логическую функцию ИЛИ)
 ![image](https://user-images.githubusercontent.com/62373163/204088715-712f1059-0dee-4ee5-af65-457b675d9f95.png)
